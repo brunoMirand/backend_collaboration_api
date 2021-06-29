@@ -1,5 +1,6 @@
 import { getCustomRepository } from 'typeorm';
 import { UsersRepositories } from '../repositories/UsersRepositories';
+import { Users } from '../entities/Users';
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 
@@ -24,17 +25,19 @@ export class AuthenticateUserService {
       throw new Error('Invalid fields: Email/Password');
     }
 
-    const token = sign(
+    return this.generateAuthenticationToken(user);
+  }
+
+  private generateAuthenticationToken(user: Users): string {
+    return sign(
       {
-        email: email
+        email: user.email
       },
       process.env.SECRET_TOKEN,
       {
         subject: user.id,
-        expiresIn: '1d',
+        expiresIn: '1d'
       }
     );
-
-    return token;
   }
 }
