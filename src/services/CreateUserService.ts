@@ -1,8 +1,6 @@
 import { getCustomRepository } from 'typeorm';
 import { UsersRepositories } from '../repositories/UsersRepositories';
 import { hash } from 'bcryptjs';
-import dotenv from 'dotenv';
-dotenv.config();
 
 interface IUserRequest {
   name: string,
