@@ -4,6 +4,8 @@ import 'express-async-errors';
 import { router } from './routes';
 
 import "./database";
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 const port = 5005;
