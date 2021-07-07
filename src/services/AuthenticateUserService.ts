@@ -31,7 +31,8 @@ export class AuthenticateUserService {
   private generateAuthenticationToken(user: Users): string {
     return sign(
       {
-        email: user.email
+        email: user.email,
+        admin: user.admin
       },
       process.env.SECRET_TOKEN,
       {
