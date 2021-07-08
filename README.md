@@ -1,6 +1,6 @@
-<h1 align="center">Forecast API</h1>
+<h1 align="center">Collaboration API</h1>
 
-<details open="open">
+<details>
   <summary>Summary</summary>
   <ol>
     <li>
@@ -28,9 +28,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Forecast API
+- Collaboration API is a project for you to leave your comments, compliments to your coworker. This is a moment that can mark your colleagues day in a positive way.
 
 ### Built With
 
@@ -80,7 +78,6 @@ Use this space to show useful examples of how a project can be used. Additional 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
 
-<!-- CONTRIBUTING -->
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -99,20 +96,15 @@ Contributions are what make the open source community such an amazing place to b
 Distributed under the MIT License. See `LICENSE` for more information.
 
 
-
-<!-- CONTACT -->
 ## Contact
 
-![Bruno Miranda](https://avatars3.githubusercontent.com/u/36895444?s=460&u=1050d3ca39dd6abf623f239b965dbf6508541f11&v=4)
-
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/bruno-miranda-a6b510156/)](https://www.linkedin.com/in/bruno-miranda-a6b510156/)
+[![Instagram Badge](https://img.shields.io/badge/-Instagram-%23E4405F?style=flat-square&logo=instagram&logoColor=white&link=https://www.instagram.com/blostt_/)](https://www.instagram.com/blostt_/)
+[![Twitter Badge](https://img.shields.io/badge/-Twitter-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/Blostt_)](https://twitter.com/Blostt_)
 
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
