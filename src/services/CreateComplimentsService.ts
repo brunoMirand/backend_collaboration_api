@@ -6,12 +6,17 @@ import { TagsRepositories } from '../repositories/TagsRepositories';
 interface IComplimentsRequest {
   tag_id: string;
   user_sender: string;
-  user_receiver:string
+  user_receiver: string;
   message: string;
 }
 
 export class CreateComplimentsService {
-  async execute({tag_id, user_sender, user_receiver, message}: IComplimentsRequest) {
+  async execute({
+    tag_id,
+    user_sender,
+    user_receiver,
+    message,
+  }: IComplimentsRequest) {
     if (user_sender === user_receiver) {
       throw new Error('A user cannot send you a compliment for himself.');
     }
@@ -23,16 +28,18 @@ export class CreateComplimentsService {
     }
 
     const tagRepositories = getCustomRepository(TagsRepositories);
-    if (!await tagRepositories.findOne(tag_id)) {
+    if (!(await tagRepositories.findOne(tag_id))) {
       throw new Error('Id Tag does not exists, please see our tag list');
     }
 
-    const complimentsRepositories = getCustomRepository(ComplimentsRepositories);
+    const complimentsRepositories = getCustomRepository(
+      ComplimentsRepositories
+    );
     const compliment = complimentsRepositories.create({
       tag_id,
       user_sender,
       user_receiver,
-      message
+      message,
     });
 
     return await complimentsRepositories.save(compliment);

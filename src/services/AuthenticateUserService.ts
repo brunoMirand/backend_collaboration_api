@@ -13,7 +13,7 @@ export class AuthenticateUserService {
   async execute({ email, password }: IAuthenticateRequest) {
     const usersRepository = getCustomRepository(UsersRepositories);
     const user = await usersRepository.findOne({
-      email
+      email,
     });
 
     if (!user) {
@@ -32,12 +32,12 @@ export class AuthenticateUserService {
     return sign(
       {
         email: user.email,
-        admin: user.admin
+        admin: user.admin,
       },
       process.env.SECRET_TOKEN,
       {
         subject: user.id,
-        expiresIn: '1d'
+        expiresIn: '1d',
       }
     );
   }

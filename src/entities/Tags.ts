@@ -3,13 +3,12 @@ import {
   PrimaryColumn,
   Column,
   CreateDateColumn,
-  UpdateDateColumn
+  UpdateDateColumn,
 } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 
 @Entity('tags')
 export class Tags {
-
   @PrimaryColumn()
   readonly id: string;
 

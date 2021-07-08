@@ -14,23 +14,26 @@ export function ensureAuthenticate(
   const authenticationToken = request.headers?.authentication;
   if (!authenticationToken) {
     return response.status(401).json({
-      'message': 'Unauthorized, authentication token not found.',
-      'status': 401
+      message: 'Unauthorized, authentication token not found.',
+      status: 401,
     });
   }
 
   try {
-    const { sub, admin } = verify(String(authenticationToken), process.env.SECRET_TOKEN) as JwtPayload & JsonWebTokenUserData;
+    const { sub, admin } = verify(
+      String(authenticationToken),
+      process.env.SECRET_TOKEN
+    ) as JwtPayload & JsonWebTokenUserData;
     request.user_data = {
       id: sub,
-      admin
+      admin,
     };
 
     return next();
   } catch (error) {
     return response.status(401).json({
-      'message': `Unauthorized, invalid token, ${error.message}`,
-      'status': 401
+      message: `Unauthorized, invalid token, ${error.message}`,
+      status: 401,
     });
   }
 }
