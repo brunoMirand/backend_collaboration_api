@@ -14,6 +14,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#documentation-api">Documentation API</a></li>
     <li><a href="#how-to-contribute">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -26,9 +27,7 @@
 - Collaboration API is a project for you to leave your comments, compliments to your coworker. This is a moment that can mark your colleagues day in a positive way.
 
 
-
 ## Getting Started
-
 
 ### Prerequisites
 
