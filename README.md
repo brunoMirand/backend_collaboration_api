@@ -61,6 +61,13 @@ Build API:
 ```
 > Now only access the API at the address: **http://localhost:5005/**
 
+## Documentation API
+
+Acess the following endpoint to see all resources API
+```bash
+  http://localhost:5005/docs/
+```
+
 ## How to Contribute
 
 Acess the link to know how to [Contribute](./CONTRIBUTING.md)
