@@ -67,6 +67,7 @@ Acess the following endpoint to see all resources API
 ```bash
   http://localhost:5005/docs/
 ```
+![image](https://user-images.githubusercontent.com/36895444/125208914-ca661d80-e26b-11eb-9467-3f8d178e7484.png)
 
 ## How to Contribute
 
