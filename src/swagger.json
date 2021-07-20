@@ -1,0 +1,85 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Collaboration Documentation API",
+    "description": "Collaboration API is a project for you to leave your comments, compliments to your coworker. This is a moment that can mark your colleagues day in a positive way.",
+    "termsOfService": "terms of use",
+    "contact": {
+      "email": "https://www.linkedin.com/in/bruno-miranda-a6b510156/"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5005",
+      "description": "base"
+    }
+  ],
+  "paths": {
+    "/users": {
+      "post": {
+        "summary": "Registering a new user",
+        "description": "Registering a new user",
+        "tags": [
+          "user"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              },
+              "examples": {
+                "user":{
+                  "value": {
+                    "name": "John Travolta",
+                    "email": "johntravolta@gmail.com",
+                    "password": "!2@MLK8912",
+                    "admin": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Email incorrect/User example@example.com already exists"
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "admin": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

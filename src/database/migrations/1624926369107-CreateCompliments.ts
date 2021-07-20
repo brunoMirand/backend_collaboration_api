@@ -1,7 +1,6 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 export class CreateCompliments1624926369107 implements MigrationInterface {
-
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -10,29 +9,29 @@ export class CreateCompliments1624926369107 implements MigrationInterface {
           {
             name: 'id',
             type: 'uuid',
-            isPrimary: true
+            isPrimary: true,
           },
           {
             name: 'user_sender',
-            type: 'uuid'
+            type: 'uuid',
           },
           {
             name: 'user_receiver',
-            type: 'uuid'
+            type: 'uuid',
           },
           {
             name: 'tag_id',
-            type: 'uuid'
+            type: 'uuid',
           },
           {
             name: 'message',
-            type: 'varchar'
+            type: 'varchar',
           },
           {
             name: 'created_at',
             type: 'timestamp',
-            default: 'now()'
-          }
+            default: 'now()',
+          },
         ],
         foreignKeys: [
           {
@@ -41,7 +40,7 @@ export class CreateCompliments1624926369107 implements MigrationInterface {
             referencedColumnNames: ['id'],
             columnNames: ['user_sender'],
             onDelete: 'SET NULL',
-            onUpdate: 'SET NULL'
+            onUpdate: 'SET NULL',
           },
           {
             name: 'FKUserReceiverCompliments',
@@ -49,7 +48,7 @@ export class CreateCompliments1624926369107 implements MigrationInterface {
             referencedColumnNames: ['id'],
             columnNames: ['user_receiver'],
             onDelete: 'SET NULL',
-            onUpdate: 'SET NULL'
+            onUpdate: 'SET NULL',
           },
           {
             name: 'FKTagCompliments',
@@ -57,9 +56,9 @@ export class CreateCompliments1624926369107 implements MigrationInterface {
             referencedColumnNames: ['id'],
             columnNames: ['tag_id'],
             onDelete: 'SET NULL',
-            onUpdate: 'SET NULL'
-          }
-        ]
+            onUpdate: 'SET NULL',
+          },
+        ],
       })
     );
   }
@@ -67,5 +66,4 @@ export class CreateCompliments1624926369107 implements MigrationInterface {
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropTable('compliments');
   }
-
 }

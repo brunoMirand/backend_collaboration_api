@@ -1,5 +1,6 @@
 import { getCustomRepository } from 'typeorm';
 import { UsersRepositories } from '../repositories/UsersRepositories';
+import { Users } from '../entities/Users';
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 
@@ -12,7 +13,7 @@ export class AuthenticateUserService {
   async execute({ email, password }: IAuthenticateRequest) {
     const usersRepository = getCustomRepository(UsersRepositories);
     const user = await usersRepository.findOne({
-      email
+      email,
     });
 
     if (!user) {
@@ -24,9 +25,14 @@ export class AuthenticateUserService {
       throw new Error('Invalid fields: Email/Password');
     }
 
-    const token = sign(
+    return this.generateAuthenticationToken(user);
+  }
+
+  private generateAuthenticationToken(user: Users): string {
+    return sign(
       {
-        email: email
+        email: user.email,
+        admin: user.admin,
       },
       process.env.SECRET_TOKEN,
       {
@@ -34,7 +40,5 @@ export class AuthenticateUserService {
         expiresIn: '1d',
       }
     );
-
-    return token;
   }
 }

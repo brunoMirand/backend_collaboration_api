@@ -1,18 +1,16 @@
 import { getCustomRepository } from 'typeorm';
 import { UsersRepositories } from '../repositories/UsersRepositories';
 import { hash } from 'bcryptjs';
-import dotenv from 'dotenv';
-dotenv.config();
 
 interface IUserRequest {
-  name: string,
-  email: string,
-  admin?: boolean,
-  password: string,
+  name: string;
+  email: string;
+  admin?: boolean;
+  password: string;
 }
 
 export class CreateUserService {
-  async execute({name, email, admin = false, password}: IUserRequest) {
+  async execute({ name, email, admin = false, password }: IUserRequest) {
     if (!email) {
       throw new Error('Email incorrect');
     }
@@ -28,7 +26,7 @@ export class CreateUserService {
       name,
       email,
       admin,
-      password: encryptedPassword
+      password: encryptedPassword,
     });
 
     return await usersRepository.save(user);

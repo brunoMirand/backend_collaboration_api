@@ -3,13 +3,12 @@ import {
   Column,
   PrimaryColumn,
   CreateDateColumn,
-  UpdateDateColumn
-} from "typeorm";
+  UpdateDateColumn,
+} from 'typeorm';
 import { v4 as uuid } from 'uuid';
 
 @Entity('users')
 export class Users {
-
   @PrimaryColumn()
   readonly id: string;
 
